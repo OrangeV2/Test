@@ -17,6 +17,7 @@ file "/etc/bind/zones/db.${nume_domeniu}";
 EOM
 touch /etc/bind/zones/db.${nume_domeniu}
 ##############creaza continutul fisierului zona###########
+{
 echo "\$TTL 86400;"
 ###### sincepe SOA ######
 #echo "\$ORIGIN ${nume_domeniu}."
@@ -51,3 +52,4 @@ if [ "$input" == "y" ];
         else
         echo ""
 fi
+}> /etc/bind/zones/db.${nume_domeniu};
