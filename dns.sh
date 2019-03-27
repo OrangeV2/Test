@@ -7,7 +7,16 @@ read -p "WWWIP:" WWWIP
 read -p "Nameserver:" nameserver
 read -p "IP_NS:" IP_NS
 read -p "Doriti Server De Mail?(y/n) " input
-
+###########creaza intrarea si fisierul zona##############
+FILE="/etc/bind/named.conf.local"
+/bin/cat <<EOM >>$FILE
+zone "${nume_domeniu}"
+{type master;
+file "/etc/bind/zones/db.${nume_domeniu}";
+};
+EOM
+touch /etc/bind/zones/db.${nume_domeniu}
+##############creaza continutul fisierului zona###########
 echo "\$TTL 86400;"
 ###### sincepe SOA ######
 #echo "\$ORIGIN ${nume_domeniu}."
