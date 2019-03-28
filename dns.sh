@@ -1,5 +1,5 @@
 echo "############################################################################## "
-echo "#                          Maintained by Nicu                                # "
+echo "#                                                                            # "
 echo "#                      Automatizarea zonei Bind9                             # "
 echo "############################################################################## "
 read -p "nume_domeniu:" nume_domeniu
